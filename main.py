@@ -1,0 +1,46 @@
+import uvicorn
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse, RedirectResponse
+
+from dto import RequestModel
+from config import TG_MANAGER
+from utils import format
+
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
+
+app.mount("/static", StaticFiles(directory="frontend/.output/public/static"), name="static")
+page_main = FileResponse("frontend/.output/public/index.html")
+
+@app.get("/")
+async def index():
+    return page_main
+
+@app.get("/PPPIIINNNGG40324")
+async def pingg():
+    global page_main
+    page_main = FileResponse("frontend/.output/public/index.html")
+    return RedirectResponse("/")
+
+@app.post("/form")
+async def form(data: RequestModel):
+    print(data.phone, data.comment)
+    status_code = await TG_MANAGER.send(await format("127.0.0.1", data))
+    print(status_code)
+    return {
+        "status": status_code,
+        "message": "Успешно" if status_code >= 200 and status_code < 300 else "Ошибка"
+    }
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", reload = True, host = "192.168.43.190", port = 7178)
