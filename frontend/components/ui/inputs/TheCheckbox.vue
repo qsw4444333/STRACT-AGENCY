@@ -18,7 +18,7 @@ const props = defineProps<Props>();
 
 <style scoped>
   .input-group {
-    @apply flex items-center gap-[10px] mb-[10px];
+    @apply flex items-center gap-[10px] mb-[10px] w-full;
     height: 40px;
 
     input {
