@@ -34,4 +34,9 @@ export default defineNuxtConfig({
     port: 3000,
     host: '192.168.43.190',
   },
+  runtimeConfig: {
+    public: {
+      API_URL: process.env.API_URL,
+    },
+  },
 })

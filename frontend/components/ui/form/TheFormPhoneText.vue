@@ -40,6 +40,8 @@ const reload = async () => {
   }, 2000);
 };
 
+const config = useRuntimeConfig();
+
 const submitForm = async () => {
   unsetMessage();
 
@@ -54,8 +56,7 @@ const submitForm = async () => {
   }
 
   try {
-    console.log(state.comment);
-    const response = await $fetch<Response>('/form', {
+    const response = await $fetch<Response>(config.public.API_URL, {
       method: 'post',
       body: JSON.stringify(state),
       headers: {

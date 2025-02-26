@@ -32,15 +32,13 @@ async def pingg():
     page_main = FileResponse("frontend/.output/public/index.html")
     return RedirectResponse("/")
 
-@app.post("/form")
+@app.post("/frm")
 async def form(data: RequestModel):
-    print(data.phone, data.comment)
     status_code = await TG_MANAGER.send(await format("127.0.0.1", data))
-    print(status_code)
     return {
         "status": status_code,
         "message": "Успешно" if status_code >= 200 and status_code < 300 else "Ошибка"
     }
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", reload = True, host = "192.168.43.190", port = 7178)
+    uvicorn.run("main:app", reload=False, workers=5, host = "127.0.0.1", port = 7178)
