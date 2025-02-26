@@ -15,7 +15,43 @@ export default defineNuxtConfig({
         },
         {
           name: "keywords",
-
+          content: ""
+        },
+        {
+          name: "og:image",
+          content: "https://avitologstract.ru/static/img/ogImage.webp",
+        },
+        {
+          name: "og:title",
+          content: "STRACT DIGITAL Агенство - Настроим авито, приведём новых клиентов в ваш бизнес",
+        },
+        {
+          name: "og:description",
+          content: "Мы digital Агенство STRACT, помогаем найти новых клиентов для вашего бизнеса. Команда професионалов настроит вам авито и запустит рекламу вашего бизнеса."
+        },
+        {
+          name: "og:site_name",
+          content: "Digital агенство STRACT"
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "og:image:width",
+          content: "1200",
+        },
+        {
+          name: "og:image:height",
+          content: "630",
+        },
+        {
+          name: "og:image:type",
+          content: "image/webp",
+        },
+        {
+          name: "og:url",
+          content: "https://avitologstract.ru/",
         }
       ],
       charset: "utf-8",

