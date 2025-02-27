@@ -90,7 +90,12 @@ onMounted(() => {
       @apply text-[#FFF] text-center;
 
       p {
+        @apply h-[100px];
         font-size: 16px;
+
+        @media screen and (max-width: 804px) {
+          height: fit-content;
+        }
       }
     }
   }

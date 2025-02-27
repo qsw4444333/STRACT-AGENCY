@@ -22,9 +22,9 @@ const contacts = [
   {
     icon: "static/img/icons/phone.svg",
     title: "Номер телефона",
-    content: "<span itemprop='telephone'>+7 (937) 957-30-99</span>",
+    content: "<span itemprop='telephone'>+7 (952)-312-52-93</span>",
     isLink: true,
-    href: "tel:89379573099",
+    href: "tel:89523125293",
   },
   {
     icon: "static/img/icons/profile.svg",
@@ -43,10 +43,10 @@ const contacts = [
 ];
 
 const socials = {
-  tg: "",
-  whatsapp: "",
-  vk: "",
-  avito: "",
+  tg: "https://t.me/artemiy_arkadyevich",
+  whatsapp: "https://wa.me/79523125293/",
+  vk: "https://vk.com/artemyarkadyevich",
+  avito: "https://t.me/artemiy_arkadyevich",
 };
 
 const target = ref(null);

@@ -53,7 +53,6 @@ onMounted(() => {
     @media screen and (max-width: 640px) {
       @apply p-[10px] rounded-[10px];
       flex: 0 0 100%;
-      border: 1px solid #71CF92;
     }
 
     .stat-block__item{

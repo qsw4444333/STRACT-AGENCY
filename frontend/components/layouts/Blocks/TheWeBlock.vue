@@ -6,19 +6,19 @@ import TheLazyImage from "~/components/ui/img/TheLazyImage.vue";
 
 const we_blocks = [
   {
-    title: "Эффективность продвижения",
+    title: "Эффективность",
     content: "За время работы с нами, вы станете лидером в своей нише",
     icon: "static/img/icons/molnya.svg"
   },
   {
-    title: "Эффективность продвижения",
-    content: "За время работы с нами, вы станете лидером в своей нише",
-    icon: "static/img/icons/molnya.svg"
+    title: "Сохранность",
+    content: "Вся проделанная работа на вашем профиле останется на всегда с вами",
+    icon: "static/img/icons/folder-open.svg"
   },
   {
-    title: "Эффективность продвижения",
-    content: "За время работы с нами, вы станете лидером в своей нише",
-    icon: "static/img/icons/molnya.svg"
+    title: "Прибыль",
+    content: "Ваша прибыль вырастит минимум в два раза",
+    icon: "static/img/icons/money.svg"
   },
 ];
 
