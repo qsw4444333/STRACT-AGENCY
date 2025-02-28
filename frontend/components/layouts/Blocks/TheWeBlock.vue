@@ -8,17 +8,17 @@ const we_blocks = [
   {
     title: "Эффективность",
     content: "За время работы с нами, вы станете лидером в своей нише",
-    icon: "static/img/icons/molnya.svg"
+    icon: "static/img/icons/molnya.webp"
   },
   {
     title: "Сохранность",
     content: "Вся проделанная работа на вашем профиле останется на всегда с вами",
-    icon: "static/img/icons/folder-open.svg"
+    icon: "static/img/icons/folder-open.webp"
   },
   {
     title: "Прибыль",
     content: "Ваша прибыль вырастит минимум в два раза",
-    icon: "static/img/icons/money.svg"
+    icon: "static/img/icons/money.webp"
   },
 ];
 

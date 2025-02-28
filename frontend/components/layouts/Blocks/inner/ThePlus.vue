@@ -79,9 +79,5 @@ onMounted(() => {
 
   .pluses-block__item-green {
     @apply bg-[#71CF92];
-
-    @media screen and (max-width: 862px) {
-      @apply bg-[#FFF];
-    }
   }
 </style>

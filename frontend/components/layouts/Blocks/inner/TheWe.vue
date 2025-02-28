@@ -64,14 +64,22 @@ onMounted(() => {
       border: 1px solid #71CF92;
       box-shadow: 0 4px 4px 0 rgba(113, 207, 146, 1);
 
+      .we-block__left-icon {
+        @apply flex justify-center;
+      }
+
       img {
-        @apply sticky;
-        top: 150px;
+        width: 45px;
+        height: 45px;
       }
     }
 
     .we-block__item-right {
-      @apply text-center
+      @apply text-center;
+
+      p {
+        max-width: 250px;
+      }
     }
   }
 </style>
