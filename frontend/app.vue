@@ -23,7 +23,7 @@ import TheContactBlock from "~/components/layouts/Blocks/TheContactBlock.vue";
                     :count=900
                     :clients=57
                     image_bg="bg-avito.svg"
-                    image_src="handshakes.png"
+                    image_src="handshakes.webp"
       />
     </TheInner>
     <TheStrategyBlock />
