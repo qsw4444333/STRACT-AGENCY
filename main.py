@@ -26,6 +26,14 @@ page_main = FileResponse("frontend/.output/public/index.html")
 async def index():
     return page_main
 
+@app.get("/robots.txt")
+async def index():
+    return FileResponse("frontend/.output/public/robots.txt")
+
+@app.get("/sitemap.xml")
+async def index():
+    return FileResponse("frontend/.output/public/sitemap.xml")
+
 @app.get("/PPPIIINNNGG40324")
 async def pingg():
     global page_main
@@ -43,6 +51,10 @@ async def form(data: RequestModel, request: Request):
         "status": status_code,
         "message": "Успешно" if status_code >= 200 and status_code < 300 else "Ошибка"
     }
+
+@app.get("/{custom_page}")
+async def custom_page(request: Request):
+    return RedirectResponse("/")
 
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=False, workers=5, host = "127.0.0.1", port = 7178)
