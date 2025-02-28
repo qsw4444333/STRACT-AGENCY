@@ -111,6 +111,7 @@ function scrollToSection(section: string): void {
 
     .tarif-block__item-services {
       @apply ml-[10px] h-[520px];
+      margin-left: 15px;
       list-style-type: disc;
 
       @media screen and (max-width: 1196px) {

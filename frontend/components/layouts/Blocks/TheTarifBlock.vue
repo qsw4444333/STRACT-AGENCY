@@ -7,9 +7,9 @@ import TheInner from "~/components/layouts/TheInner.vue";
 const tarifs = [
   {
     title: "Продвижение Услуг",
-    price: "11.990₽",
+    price: "5.980₽",
     lastPrice: "14.990₽",
-    priceNum: "11990.00",
+    priceNum: "5980.00",
     services: [
         "Анализ ниши и подбор тарифного плана",
         "Расчет бюджетного плана",
