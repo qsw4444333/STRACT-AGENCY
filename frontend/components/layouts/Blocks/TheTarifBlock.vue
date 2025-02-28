@@ -8,7 +8,7 @@ const tarifs = [
   {
     title: "Продвижение Услуг",
     price: "5.980₽",
-    lastPrice: "14.990₽",
+    lastPrice: "11.960₽",
     priceNum: "5980.00",
     services: [
         "Анализ ниши и подбор тарифного плана",
