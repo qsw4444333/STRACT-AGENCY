@@ -6,48 +6,48 @@ import TheLink from "~/components/ui/links/TheLink.vue";
 
 const reviews = [
   {
-    image: "static/img/reviews/1.png",
-    title: "Название кейса",
-    content: "Описание",
-    review: "Отзыв",
-    author: "Author",
-    published: "2024-10-12",
-    raiting: 10,
-  },
-  {
-    image: "static/img/reviews/1.png",
-    title: "Название кейса",
-    content: "Описание",
-    review: "Отзыв",
-    author: "Author",
-    published: "2024-10-12",
-    raiting: 10,
-  },
-  {
-    image: "static/img/reviews/1.png",
-    title: "Название кейса",
-    content: "Описание",
-    review: "Отзыв",
-    author: "Author",
-    published: "2024-10-12",
-    raiting: 10,
-  },
-  {
-    image: "static/img/reviews/1.png",
-    title: "Название кейса",
-    content: "Описание",
-    review: "Отзыв",
-    author: "Author",
-    published: "2024-10-12",
-    raiting: 10,
-  },
-  {
-    image: "static/img/reviews/1.png",
-    title: "Название кейса",
-    content: "Описание",
-    review: "Отзыв",
+    image: "static/img/reviews/1.webp",
+    title: "Автозапчасти кузовные",
+    content: "Ниша: Автозапчасти кузовные<br>Город: Казань<br>Стартовали с полного 0<br>Результат за месяц<br>Клиент доволен, работаем 2 месяц",
+    review: "Весьма благодарен Артемию за работу, была большая проблема с лидами, но Артемий и его команда решила, поток заявок увеличился в 2 раза, но при этом живых заявок стало в 3 раза больше, итого имеем в 3 раза больше заявок. Очень благодарен, будем работать дальше",
     author: "ZapAuto",
     published: "2024-10-12",
+    raiting: 10,
+  },
+  {
+    image: "static/img/reviews/2.webp",
+    title: "Металлические изделия",
+    content: "Ниша: Металлические изделия<br>Город: По всей России<br>Результаты на фото",
+    review: "",
+    author: "ZapAuto",
+    published: "2024-11-23",
+    raiting: 10,
+  },
+  {
+    image: "static/img/reviews/3.webp",
+    title: "Автозапчасти новые",
+    content: "Ниша: Автозапчасти новые<br>Город: Москва<br>Результат 31 день на фото, продажи выросли в два раза.",
+    review: "Отзыв",
+    author: "ZapAuto",
+    published: "2024-11-29",
+    raiting: 10,
+  },
+  {
+    image: "static/img/reviews/4.webp",
+    title: "Автозапчасти кузовные Б/У",
+    content: "Ниша: Автозапчасти кузовня Б/У<br>Город: Казань<br>Стартовали с полного 0<br>Результат на фото",
+    review: "Отзыв",
+    author: "ZapAuto",
+    published: "2024-12-05",
+    raiting: 10,
+  },
+  {
+    image: "static/img/reviews/5.webp",
+    title: "Скупка электрооборудований",
+    content: "Ниша: скупка электрооборудований<br>По всей России<br>Была не простая задача cделать массовый постинг по скупке оборудований, на авито запрещено скупать поэтом нам приходилось делать максимальную уникализацию",
+    review: "Отзыв",
+    author: "ZapAuto",
+    published: "2025-01-09",
     raiting: 10,
   },
 ];
@@ -67,7 +67,7 @@ const reviews = [
                  :published="review.published"
                  :raiting="review.raiting" />
     </div>
-    <TheLink class="btn" href="https://t.me/trfficArtemiyArkadyvich" target="_blank" text="Смотреть больше работ" />
+    <TheLink class="btn" href="https://t.me/artemiy_arkadyevich" target="_blank" text="Смотреть больше работ" />
   </TheBlock>
 </template>
 

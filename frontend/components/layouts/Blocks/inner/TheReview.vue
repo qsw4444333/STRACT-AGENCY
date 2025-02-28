@@ -68,7 +68,7 @@ onMounted(() => {
 
 <style scoped>
   .review__item {
-    @apply pb-[16px] mb-[30px];
+    @apply pb-[16px] mb-[30px] w-[580px];
     transition: all .4s ease-in-out;
 
     @media screen and (max-width: 1196px) {
