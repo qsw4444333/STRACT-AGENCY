@@ -6,7 +6,7 @@ import TheLink from "~/components/ui/links/TheLink.vue";
 
 const reviews = [
   {
-    image: "static/img/reviews/2.webp",
+    image: "static/img/reviews/3.webp",
     title: "Металлические изделия",
     content: "Ниша: Металлические изделия<br>Город: По всей России<br>Результаты на фото",
     review: "Артемий грамотно подошел к решению нашей проблемы с клиентами, все объяснил и помог, большое спасибо!",
@@ -15,7 +15,7 @@ const reviews = [
     raiting: 10,
   },
   {
-    image: "static/img/reviews/3.webp",
+    image: "static/img/reviews/2.webp",
     title: "Автозапчасти новые",
     content: "Ниша: Автозапчасти новые<br>Город: Москва<br>Результат 31 день на фото, продажи выросли в два раза.",
     review: "Отличное агенство, будем сотрудничать в будущем!",

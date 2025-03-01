@@ -73,7 +73,7 @@ export default defineNuxtConfig({
         },
         {
           name: "og:image:height",
-          content: "630",
+          content: "600",
         },
         {
           name: "og:image:type",
@@ -100,6 +100,9 @@ export default defineNuxtConfig({
           `,
           type: 'text/javascript',
         },
+        {
+          src: 'https://www.google.com/recaptcha/api.js?render=' + process.env.CAPTCHA_TOKEN
+        }
       ],
       noscript: [
         {
@@ -123,11 +126,12 @@ export default defineNuxtConfig({
   },
   devServer: {
     port: 3000,
-    host: 'localhost',
+    host: '127.0.0.1',
   },
   runtimeConfig: {
     public: {
       API_URL: process.env.API_URL,
+      CAPTCHA_TOKEN: process.env.CAPTCHA_TOKEN
     },
   },
   site: {

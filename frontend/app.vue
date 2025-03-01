@@ -141,4 +141,8 @@ import TheContactBlock from "~/components/layouts/Blocks/TheContactBlock.vue";
     opacity: 1;
     transform: translateX(0);
   }
+
+  .grecaptcha-badge {
+    display: none !important;
+  }
 </style>

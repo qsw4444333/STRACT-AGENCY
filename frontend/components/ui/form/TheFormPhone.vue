@@ -5,6 +5,7 @@ import TheBtn from "~/components/ui/btns/TheBtn.vue";
 
 const state = reactive({
   phone: '',
+  token: '',
 });
 
 const is_message = ref(false);
@@ -41,31 +42,47 @@ const reload = async () => {
 const config = useRuntimeConfig();
 
 const submitForm = async () => {
-  unsetMessage();
-
-  if (state.phone.length != 18) {
-    setMessage('Некорректный номер телефона, убедитесь, что номер телефона введён верно!');
-    return;
-  }
-
   try {
-    const response = await $fetch<Response>(config.public.API_URL, {
-      method: 'POST',
-      body: JSON.stringify(state),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    grecaptcha.ready(function () {
+      grecaptcha.execute(config.public.CAPTCHA_TOKEN, {action: 'submit'}).then(async function (token) {
+        unsetMessage();
+
+        if (state.phone.length != 18) {
+          setMessage('Некорректный номер телефона, убедитесь, что номер телефона введён верно!');
+          return;
+        }
+
+        if (!token) {
+          setMessage("Captcha error, перезагрузите страницу и попробуйте еще раз или напишите в наши соц сети");
+          await reload();
+        }
+
+        state.token = token;
+
+        try {
+          const response = await $fetch<Response>(config.public.API_URL, {
+            method: 'POST',
+            body: JSON.stringify(state),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+          if (response.status >= 200 && response.status < 300) {
+            setMessage("Успешно", false);
+            await reload();
+          } else {
+            setMessage('Ошибка при отправке формы, перезагрузите страницу и попробуйте еще раз или напишите в наши соц сети');
+            await reload();
+          }
+        } catch (error) {
+          setMessage('Ошибка при отправке формы, перезагрузите страницу и попробуйте еще раз или напишите в наши соц сети');
+          await reload();
+        }
+      });
     });
-    if (response.status >= 200 && response.status < 300) {
-      setMessage("Успешно", false);
-      await reload();
-    }
-    else {
-      setMessage('Ошибка при отправке формы, перезагрузите страницу и попробуйте еще раз или напишите в наши соц сети');
-      await reload();
-    }
-  } catch (error) {
-    setMessage('Ошибка при отправке формы, перезагрузите страницу и попробуйте еще раз или напишите в наши соц сети');
+  }
+  catch (error) {
+    setMessage("Ошибка при отправки формы, напишите в наши соц сети!");
     await reload();
   }
 };
@@ -77,7 +94,8 @@ const submitForm = async () => {
     <TheInput id="phone1" label="Номер телефона" placeholder="+7 (999)-999-99-99" name="phone" v-model="state.phone" />
     <div class="flex items-start justify-end flex-wrap">
       <TheCheckbox id="cherwwq" label="Нажимая на кнопку отправить, вы даете согласие на обработку персональных данных" />
-      <TheBtn title="Отправить" type="submit" />
+      <TheBtn title="Отправить"
+              type="submit" />
     </div>
     <p v-if="is_message"
        :class="{message_err: isErr, message_suc: !isErr}">{{ message }}</p>
