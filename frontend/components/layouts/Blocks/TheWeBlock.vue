@@ -17,7 +17,7 @@ const we_blocks = [
   },
   {
     title: "Прибыль",
-    content: "Ваша прибыль вырастит минимум в два раза",
+    content: "Ваша прибыль вырастет минимум в два раза",
     icon: "static/img/icons/money.webp"
   },
 ];
