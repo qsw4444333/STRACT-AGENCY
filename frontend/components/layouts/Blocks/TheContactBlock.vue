@@ -22,9 +22,9 @@ const contacts = [
   {
     icon: "static/img/icons/phone.svg",
     title: "Номер телефона",
-    content: "<span itemprop='telephone'>+7 (952)-312-52-93</span>",
+    content: "<span itemprop='telephone'>+7 (953)-449-28-92</span>",
     isLink: true,
-    href: "tel:89523125293",
+    href: "tel:89534492892",
   },
   {
     icon: "static/img/icons/profile.svg",

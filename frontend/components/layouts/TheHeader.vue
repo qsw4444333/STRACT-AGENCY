@@ -43,7 +43,7 @@
             <TheLink text="Контакты" @click="scrollToSection('contact_block')" />
           </div>
           <div class="header__right-btn">
-            <TheLink class="link-btn" href="tel:89523125293" text="+7 (952)-312-52-93" />
+            <TheLink class="link-btn" href="tel:89534492892" text="+7 (953)-449-28-92" />
           </div>
         </div>
       </div>
